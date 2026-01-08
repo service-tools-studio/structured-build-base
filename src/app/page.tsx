@@ -10,62 +10,68 @@ export default function Home() {
 
       <main>
         {/* HERO */}
-        <section className="relative overflow-hidden border-b border-border min-h-[520px] sm:min-h-[600px]">
-          {/* Background image */}
-          <div className="absolute inset-0 z-0 translate-x-[6%] scale-[1.05]">
-            <Image
-              src={site.hero.image}
-              alt="Hero"
-              fill
-              priority
-              className="object-cover"
-            />
+        <section className="relative border-b border-border">
+          {/* Sticky background (stays pinned) */}
+          <div className="sticky top-16 h-[75vh] z-0">
+            <div className="relative h-full overflow-hidden">
+              <Image
+                src={site.hero.image}
+                alt="Hero"
+                fill
+                priority
+                className="object-cover"
+              />
 
-            {/* Fade from left */}
-            <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/65 to-transparent" />
+              {/* Fade from left → transparent */}
+              <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/30 via-60% to-transparent" />
+            </div>
           </div>
 
-          {/* Content */}
-          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-28">
-            <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fg/60">
-                Structured Build
-              </p>
+          {/* Content overlays the sticky background */}
+          <div className="relative z-10 -mt-[75vh] pt-20">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-20 sm:pt-28">
+              <div className="max-w-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fg/60">
+                  Structured Build
+                </p>
 
-              <h1 className="mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">
-                {site.hero.headline}
-              </h1>
+                <h1 className="mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">
+                  {site.hero.headline}
+                </h1>
 
-              <p className="mt-4 text-base sm:text-lg text-fg/70">
-                {site.hero.subhead}
-              </p>
+                <p className="mt-4 text-base sm:text-lg text-fg/70">
+                  {site.hero.subhead}
+                </p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {site.hero.pills.map((p) => (
-                  <span
-                    key={p}
-                    className="inline-flex items-center rounded-full border border-border bg-bg/90 px-3 py-1 text-xs font-semibold text-fg/70 shadow-sm backdrop-blur"
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {site.hero.pills.map((p) => (
+                    <span
+                      key={p}
+                      className="inline-flex items-center rounded-full border border-border bg-bg/90 px-3 py-1 text-xs font-semibold text-fg/70 shadow-sm backdrop-blur"
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    href={site.hero.primaryCta.href}
+                    className="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-95"
                   >
-                    {p}
-                  </span>
-                ))}
+                    {site.hero.primaryCta.label}
+                  </Link>
+                  <Link
+                    href={site.hero.secondaryCta.href}
+                    className="rounded-full border border-border bg-bg/90 px-5 py-3 text-sm font-semibold text-fg hover:bg-muted backdrop-blur"
+                  >
+                    {site.hero.secondaryCta.label}
+                  </Link>
+                </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href={site.hero.primaryCta.href}
-                  className="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-soft hover:opacity-95"
-                >
-                  {site.hero.primaryCta.label}
-                </Link>
-
-                <Link
-                  href={site.hero.secondaryCta.href}
-                  className="rounded-full border border-border bg-bg/90 px-5 py-3 text-sm font-semibold text-fg hover:bg-muted backdrop-blur"
-                >
-                  {site.hero.secondaryCta.label}
-                </Link>
-              </div>
+              {/* This is the "scroll for a bit" amount */}
+              <div className="h-[clamp(24rem,40vh,36rem)] sm:h-[clamp(20rem,30vh,28rem)]" />
             </div>
           </div>
         </section>
