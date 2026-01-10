@@ -44,7 +44,7 @@ export const site = {
     ],
     addOns: [
       "Extra pages",
-      "Advanced integrations (e.g. CRM, email marketing)",
+      "Advanced integrations (e.g. Stripe/payment processing, email marketing)",
       "Custom tools (e.g. estimators, calculators)",
       "Heavily revised layouts",
     ],
@@ -81,7 +81,7 @@ export const site = {
         a: "The overall layout and section flow are predefined for speed and clarity. Your fonts, colors, imagery, and copy are applied to that structure and styled to match your brand.",
       },
       { q: "How fast can we launch?", a: "Typical timeline is 7–14 days depending on content readiness." },
-      { q: "What’s out of scope?", a: "Extra pages, deep SEO, custom features, advanced integrations, and custom tools like calculators." },
+      { q: "What’s out of scope?", a: "Extra pages, deep SEO, custom features, advanced integrations, and custom tools like calculators. These can be discussed as add-ons at extra cost." },
     ],
   },
 
@@ -94,6 +94,6 @@ export const site = {
   },
 
   footer: {
-    finePrint: `© ${new Date().getFullYear()} Structured Build Demo`,
+    finePrint: `© ${new Date().getFullYear()} Sites by Jasmin | Structured Build Demo`,
   },
 } as const;
