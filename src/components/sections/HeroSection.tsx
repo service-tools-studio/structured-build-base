@@ -109,7 +109,7 @@ export default function HeroSection({ section }: HeroSectionProps) {
         {/* Text below image */}
         <div className="mx-auto max-w-6xl px-4 py-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fg/60">
-            Structured Build
+            {eyebrow}
           </p>
 
           <h1 className="mt-3 text-3xl font-semibold tracking-tight">
