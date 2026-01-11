@@ -24,25 +24,28 @@ export default function HeroSection({ section }: HeroSectionProps) {
       <section className="relative border-b border-border hidden sm:block translate-y-5">
         {/* Sticky background */}
         <div className="sticky top-16 h-[75vh] z-0">
-          <div className="relative h-full translate-x-20 scale-[0.99]">
-            {image && <Image
-              src={image}
-              alt="Hero"
-              fill
-              priority
-              className="object-cover sm:object-[70%_center]"
-            />}
+          {/* This is the CLIP boundary: same width as Header */}
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 h-full overflow-hidden">
+            {/* This can translate without creating horizontal scroll */}
+            <div className="relative h-full translate-x-20 scale-[0.99]">
+              {image && (
+                <Image
+                  src={image}
+                  alt="Hero"
+                  fill
+                  priority
+                  className="object-cover sm:object-[70%_center]"
+                />
+              )}
 
-            {/* Fade (desktop only): slightly stronger for clarity */}
-            <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/30 via-65% to-transparent" />
-
-            {/* Subtle brightness/contrast control to reduce competition with text */}
-            <div className="absolute inset-0 bg-bg/1" />
+              <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/30 via-65% to-transparent" />
+              <div className="absolute inset-0 bg-bg/1" />
+            </div>
           </div>
         </div>
 
         {/* Desktop overlay content */}
-        <div className="relative z-10 -mt-[75vh] -translate-y-12">
+        <div className="relative z-10 -mt-[75vh] -translate-y-18">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 pt-28">
             <div className="max-w-[clamp(20rem,45vw,36rem)]">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fg/60">
@@ -53,7 +56,7 @@ export default function HeroSection({ section }: HeroSectionProps) {
                 {headline}
               </h1>
 
-              <p className="mt-5 text-base sm:text-lg text-fg/70">
+              <p className="mt-4 text-sm sm:text-base text-fg/60 leading-relaxed">
                 {subhead}
               </p>
 

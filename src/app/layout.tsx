@@ -47,6 +47,7 @@ export const fonts = {
   instrument,
 };
 
+export type FontKey = keyof typeof fonts;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const c = site.theme.colors;

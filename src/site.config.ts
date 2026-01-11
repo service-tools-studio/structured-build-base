@@ -1,3 +1,4 @@
+import { FontKey } from './app/layout';
 export type Section =
   | {
     type: "hero";
@@ -57,8 +58,8 @@ export const site = {
   },
 
   theme: {
-    headingFont: "inter" as any,
-    bodyFont: "inter" as any,
+    headingFont: "inter" as FontKey,
+    bodyFont: "inter" as FontKey,
     colors: {
       bg: "0 0% 100%",
       fg: "240 10% 3.9%",
@@ -267,7 +268,7 @@ export const site = {
         eyebrow: "Structured build",
         headline: "This is a headline for your website.",
         subhead:
-          "This is a subheading that provides more detail about your services and value proposition.",
+          "All text, colors, images, and content sections are customizable to fit your brand, with thoughtful flexibility for smaller layout tweaks and design accents—so it feels uniquely yours without a full structural overhaul.",
         primaryCta: { label: "Get started", href: "/contact" },
         secondaryCta: { label: "View services", href: "/services" },
         image: "/images/hero.png",
