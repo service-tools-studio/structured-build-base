@@ -342,7 +342,7 @@ export const site = {
         "Your preferred launch timeline",
         "Any existing brand or website links (if applicable)"
       ],
-      note: 'This is a structured build with a defined scope and timeline.If your project requires something more custom, we’ll discuss next steps before moving forward.',
+      note: 'This is a structured build with a defined scope and timeline. If your project requires something more custom, we’ll discuss next steps before moving forward.',
     }
   },
 
