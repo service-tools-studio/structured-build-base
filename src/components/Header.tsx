@@ -58,7 +58,7 @@ export default function Header({ nav }: { nav?: { label: string; href: string }[
             className="h-9 w-9 rounded-xl border border-border bg-bg object-contain"
           />
           <div className="leading-tight">
-            <div className="text-sm font-semibold">{site.brand.name}</div>
+            <div className="text-sm font-heading font-semibold">{site.brand.name}</div>
             <div className="text-xs text-fg/60">{site.brand.tagline}</div>
           </div>
         </Link>

@@ -57,7 +57,8 @@ export const site = {
   },
 
   theme: {
-    font: "inter" as "inter" | "manrope" | "instrument",
+    headingFont: "inter" as any,
+    bodyFont: "inter" as any,
     colors: {
       bg: "0 0% 100%",
       fg: "240 10% 3.9%",

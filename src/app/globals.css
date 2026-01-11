@@ -20,3 +20,9 @@ body {
   background: hsl(var(--bg));
   color: hsl(var(--fg));
 }
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
