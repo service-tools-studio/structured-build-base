@@ -1,5 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer"; // optional
 import { site } from "@/site.config";
 
 const inter = Inter({
@@ -23,7 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ["--accent" as any]: c.accent,
       }}
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <Header nav={site.pages.map((p) => ({ label: p.navLabel, href: `/${p.slug}` }))} />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -31,7 +31,7 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default function Header() {
+export default function Header({ nav }: { nav?: { label: string; href: string }[] }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -65,7 +65,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
-          {site.nav.map((item) => (
+          {nav && nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -99,7 +99,7 @@ export default function Header() {
         <div className="md:hidden border-t border-border bg-bg">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4">
             <div className="grid gap-2">
-              {site.nav.map((item) => (
+              {nav && nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
